@@ -1,0 +1,16 @@
+name: glacier-app
+channels:
+  - conda-forge
+dependencies:
+  - pip
+  - python=3.8
+  - param
+  - pyviz_comms
+  - datashader
+  - bokeh=2.2.3
+  - holoviews
+  - geoviews
+  - panel
+  - pytables
+  - pip:
+    - jupyter-panel-proxy
