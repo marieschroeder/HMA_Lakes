@@ -1,13 +1,20 @@
 # -*- coding: utf-8 -*-
-supported_languages = ['en', 'de', 'fr', 'es', 'cn', 'fa', 'it']
+supported_languages = ['en', 'de', 'fr', 'es', 'cn', 'fa', 'it', 'nl', 'ur', 'sv', 'ca']
 
 
 trads = {
+    'is_rtl': {
+        # unicode languages cannot be used as selector
+        # we still want to diplay them correctly
+        'fa' : True,
+        'ur' : True,
+    },
     'lang_display': {
         # unicode languages cannot be used as selector
         # we still want to diplay them correctly
         'fa' : 'فارسی',
         'cn' : '汉语',
+        'ur' : 'اردو',
     },
     'clear_button':
         {
@@ -17,7 +24,11 @@ trads = {
             'cn': '清空选区',
             'es': 'Anular la selección',
             'fa': 'پاک کردن انتخاب',
-            'it': 'Cancella la selezione'
+            'it': 'Cancella la selezione',
+            'nl': 'Verwijder selectie',
+            'ur': 'انتخاب کو مٹا دیں',
+            'sv': 'Rensa urval',
+            'ca': 'Canceŀlar la selecció',
         },
     'bar_glaciers_selected':
         {
@@ -25,9 +36,13 @@ trads = {
             'de': 'Ausgewählte Gletscher: {} von {}',
             'fr': 'Glaciers sélectionnés: {} de {}',
             'cn': '已选择冰川：\n {}条，共计：{}条',
-            'es': 'Glaciares selecionados',
+            'es': 'Glaciares selecionados: {} de {}',
             'fa': '{} یخچال های طبیعی انتخاب شده : {} از',
-            'it': 'Ghiacciai selezionati: {} di {}'
+            'it': 'Ghiacciai selezionati: {} di {}',
+            'nl': 'Geselecteerde gletsjers: {} van {}',
+            'ur': '{} منتخب گلیشیئرز : {} کے',
+            'sv': 'Utvalda glaciärer: {} av {}',
+            'ca': 'Glaceres seleccionades: {} de {}',
         },
     'bar_area':
         {
@@ -37,7 +52,11 @@ trads = {
             'cn': '面积',
             'es': 'Área',
             'fa': 'مساحت',
-            'it': 'Area'
+            'it': 'Area',
+            'nl': 'Oppervlakte',
+            'ur': 'رقبہ',
+            'sv': 'Area',
+            'ca': 'Àrea',
         },
     'bar_volume':
         {
@@ -47,17 +66,25 @@ trads = {
             'cn': '体积',
             'es': 'Volumen',
             'fa': 'حجم',
-            'it': 'Volume'
+            'it': 'Volume',
+            'nl': 'Volume',
+            'ur': 'حجم',
+            'sv': 'Volym',
+            'ca': 'Volum',
         },
     'bar_sealevel_text':
         {
             'en': 'Sea-level equivalent: ',
-            'de': 'Beitrag zum Meeresspiegelanstieg:<br>',
-            'fr': "Élévation du niveau de la mer:<br>",
+            'de': 'Beitrag zum Meeresspiegelanstieg: <br>',
+            'fr': "Élévation du niveau de la mer: <br>",
             'cn': '对应海平面上升高度: ',
-            'es': 'Nivel del mar equivalente',
-            'fa': 'معادل از سطح دریا',
-            'it': 'Innalzamento del livello del mare:<br>'
+            'es': 'Nivel del mar equivalente: ',
+            'fa': ' :معادل از سطح دریا',
+            'it': 'Innalzamento del livello del mare: <br>',
+            'nl': 'Potentiële bijdrage aan de zeespiegelstijging: <br>',
+            'ur': ' :سطح سمندر کے مساوی',
+            'sv': 'Potentiellt bidrag till havsnivåhöjning<br>: ',
+            'ca': 'Increment del nivell del mar: <br>',
         },
     'bar_sealevel_y':
         {
@@ -67,7 +94,11 @@ trads = {
             'cn': '冰川体积对应海平面上升高度（mm）',
             'es': 'Volumen en mm del nivel medio del mar',
             'fa': '(حجمی معادل از سطح دریا (میلی متر',
-            'it': 'Innalzamento del livello del mare in mm'
+            'it': 'Innalzamento del livello del mare in mm',
+            'nl': 'Potentiële bijdrage aan de zeespiegelstijging in mm',
+            'ur': 'حجم (سطح سمندر کے مساوی ملی میٹر)',
+            'sv': 'Potentiellt bidrag till havsnivåhöjning i mm',
+            'ca': 'Volum en mm d\'increment del nivell del mar',
         },
     'map_plot_x':
         {
@@ -77,7 +108,11 @@ trads = {
             'cn': '经度',
             'es': 'Longitud',
             'fa': 'طول جغرافیایی',
-            'it': 'Longitudine'
+            'it': 'Longitudine',
+            'nl': 'Lengtegraad',
+            'ur': 'طول البلد',
+            'sv': 'Longitud',
+            'ca': 'Longitud',
         },
     'map_plot_y':
         {
@@ -87,7 +122,11 @@ trads = {
             'cn': '纬度',
             'es': 'Latitud',
             'fa': 'عرض جغرافیایی',
-            'it': 'Latitudine'
+            'it': 'Latitudine',
+            'nl': 'Breedtegraad',
+            'ur': 'عرض البلد',
+            'sv': 'Latitud',
+            'ca': 'Latitud',
         },
     'temp_plot_x':
         {
@@ -95,9 +134,13 @@ trads = {
             'de': 'Jahresdurchschnittstemperatur in mittlerer Höhe (°C)',
             'fr': "Temperature annuelle à l'altitude moyenne (°C)",
             'cn': '冰川平均高程处的年平均气温（°C）',
-            'es': 'Temperatura anual á altura promedio (°C)',
+            'es': 'Temperatura anual a altura promedio (°C)',
             'fa': '(میانگین دمای سالانه نسبت به ارتفاع (سانتیگراد',
-            'it': "Temperatura media annua all'altitudine media (°C)"
+            'it': "Temperatura media annua all'altitudine media (°C)",
+            'nl': 'Gemiddelde jaartemperatuur <br> op de gemiddelde hoogte (°C)',
+            'ur': 'سالانہ درجہ حرارت اوسطاً اونچائی پر (ڈگری سنٹی گریڈ)',
+            'sv': 'Temperatur, årsmedel, vid medelhöjd (°C)',
+            'ca': 'Temperatura anual segons l\'altitud mitjana (ºC)',
         },
     'trend_plot_x':
         {
@@ -107,7 +150,11 @@ trads = {
             'cn': '1979-2018年气温变化率（°C/10年）',
             'es': 'Tendencia de la temperatura 1979-2018 (°C/década)',
             'fa': 'روند تغییرات دما(سانتیگراد، دوره ده ساله) ۱۹۷۹-۲۰۱۸',
-            'it': 'Tendenza della temperatura 1979-2018 (°C/decade)'
+            'it': 'Tendenza della temperatura 1979-2018 (°C/decade)',
+            'nl': 'Temperatuurtrend 1979-2018 (°C/decennium)',
+            'ur': 'درجہ حرارت کا رجحان ١٩٧٩ تا ٢٠١٨ (ڈگری سنٹی گریڈ فی دہائی)',
+            'sv': 'Temperaturtrend 1979-2018 (°C/decennium)',
+            'ca': 'Tendència de la temperatura 1979-2018 (ºC/dècada)',
         },
     'trend_plot_y':
         {
@@ -117,7 +164,11 @@ trads = {
             'cn': '冰川数目',
             'es': 'Número de glaciares',
             'fa': 'تعداد یخچال های طبیعی',
-            'it': 'Numero di ghiacciai'
+            'it': 'Numero di ghiacciai',
+            'nl': 'Aantal gletsjers',
+            'ur': 'گلیشیئرز کی تعداد',
+            'sv': 'Antal glaciärer',
+            'ca': 'Nombre de glaceres',
         },
     'precip_plot_x':
         {
@@ -127,7 +178,11 @@ trads = {
             'cn': '年降水量（mm/年）',
             'es': 'Precipitación anual (mm/an)',
             'fa': '(بارندگی سالانه (میلی متر در سال',
-            'it': 'Precipitazione annua (mm/anno)'
+            'it': 'Precipitazione annua (mm/anno)',
+            'nl': 'Jaarlijkse neerslag (mm/jaar)',
+            'ur': 'سالانہ بارش (ملی میٹر فی سال)',
+            'sv': 'Årsnederbörd (mm/år)',
+            'ca': 'Precipitació anual (mm/any)',
         },
     'elev_plot_x':
         {
@@ -137,7 +192,11 @@ trads = {
             'cn': '冰川平均海拔（m a.s.l.）',
             'es': 'Elevación media del Glaciar (m s.n.m.)',
             'fa': '(میانگین ارتفاع یخچال (متر',
-            'it': 'Altitudine media del ghiacciaio (s.l.m.)'
+            'it': 'Altitudine media del ghiacciaio (s.l.m.)',
+            'nl': 'Gemiddelde hoogte van de gletsjer <br> (m boven zeeniveau)',
+            'ur': 'گلیشیئر کی اوسط بلندی (میٹر - سطح سمندر سے اوپر)',
+            'sv': 'Glaciärens medelhöjd (m ö.h.)',
+            'ca': 'Altitud mitjana de la glacera (m.s.n.m.)',
         },
     'elev_plot_y':
         {
@@ -147,7 +206,11 @@ trads = {
             'cn': '纬度',
             'es': 'Latitud',
             'fa': 'عرض جغرافیایی',
-            'it': 'Latitudine'
+            'it': 'Latitudine',
+            'nl': 'Breedtegraad',
+            'ur': 'عرض البلد',
+            'sv': 'Latitud',
+            'ca': 'Latitud',
         },
     'instructions':
         {
@@ -190,7 +253,28 @@ trads = {
                   'la tua selezione con il pulsante "Cancella selezione" sulla '
                   "sinistra</b>. Per maggiori informazioni sull'app e sulle nostre "
                   'fonti di dati, visita <a href="http://edu.oggm.org/en/latest/'
-                  'explorer.html">edu.oggm.org</a>'
+                  'explorer.html">edu.oggm.org</a>',
+            'nl': 'Maak een selectie op de kaart of in een van de andere figuren '
+                  'door te klikken en te slepen met de muis. <b>Wis '
+                  'de selectie met de "Verwijder selectie" knop aan de '
+                  'linkerkant</b>.<br>Voor meer informatie over de app en onze '
+                  'databronnen, ga naar <a href="http://edu.oggm.org/en/latest/'
+                  'explorer.html">edu.oggm.org</a>',
+            'ur': 'نقشے میں یا دیگرتصویروں  میں ماؤس کو کلک اور ڈریگ کرکے اپنی دلچسپی کا علاقہ منتخب کریں۔ <br><b>'
+                  'بائیں جانب موجود "انتخاب کو مٹا دیں" بٹن کے ساتھ اپنے انتخاب کو  دوبارہ ترتیب دیں </b>'
+                  'ایپ کے بارے میں مزید معلومات اور ہمارے ڈیٹا ذرائع کے لیے، ملاحظہ کریں' 
+                  '<br><a href="http://edu.oggm.org/en/latest/explorer.html">edu.oggm.org</a>',
+            'sv': 'Välj region genom att klicka och dra med musen i kartan eller i '
+                  'någon av de andra figurerna.<br><b>Återställ urvalet med knappen '
+                  '"Rensa urval" till vänster.</b><br>För mer information om appen '
+                  'och vår data, besök <a href="http://edu.oggm.org/en/latest/'
+                  'explorer.html">edu.oggm.org</a>',
+            'ca': 'Escolliu la vostra regió d\'interès fent clic i arrossegant '
+                  'el cursor sobre el mapa o sobre la resta de figures.<br><b>Inicialitzeu '
+                  'la vostra selecció fent clic al botó "Canceŀlar la selecció" situat a l\'esquerra '
+                  '</b>.<br>Per a més informació sobre l\'aplicació i procedència de les dades, '
+                  'visiteu <a href="http://edu.oggm.org/en/latest/'
+                  'explorer.html">edu.oggm.org</a>',          
         },
     'abbreviations':
         {
@@ -203,15 +287,26 @@ trads = {
             'fr': 'Abbréviations:<br>'
                   '"asl" (above sea level): volume total de glace se trouvant au dessus du niveau de la mer.<br>'
                   '"bsl" (below sea level): volume total de glace se trouvant en dessous du niveau de la mer.',
-            'cn': '"asl" (above sea level): 海平面以上，海平面以上的冰川总体积。<br>'
-                  '"bsl" (below sea level): 海平面以下，海洋中海平面以下的冰川总体积。',
+            'cn': '缩写:<br>'
+                  '"asl" (above sea level): 海平面以上的冰川总体积。<br>'
+                  '"bsl" (below sea level): 海洋中海平面以下(接地)的冰川总体积。',
             'es': '"asl" (above sea level): volumen total del glaciar ubicado sobre el nivel del mar.<br>'
                   '"bsl" (below sea level): volumen total del glaciar ubicado por debajo del nivel del mar.',
             'fa': '"asl" (above sea level):حجم کل یخچال های بالاتر از سطح دریا <br>'
                   '"bsl" (below sea level):حجم کل یخچال های پایین تر از سطح دریا/اقیانوس ها',
             'it': 'Abbreviazioni:<br>'
                   '"asl" (above sea level): volume totale del ghiacciaio che si trova sopra il livello del mare.<br>'
-                  '"bsl" (below sea level): volume totale del ghiacciaio che si trova sotto il livello del mare (incagliato).'
-        },
+                  '"bsl" (below sea level): volume totale del ghiacciaio che si trova sotto il livello del mare (incagliato).',
+            'nl': '"asl" (above sea level): totale gletsjer volume dat zich boven zeeniveau bevindt.<br>'
+                  '"bsl" (below sea level): totale gletsjer volume dat zich onder zeeniveau bevindt.',
+            'ur': 'مخففات:<br>'
+                  '"asl" (above sea level): گلیشیر کا کل حجم جو سطح سمندر سے اوپر ہے۔<br>'
+                  '"bsl" (below sea level): گلیشیر کا کل حجم جو سمندر میں سطح سمندر سے نیچے ہے (زمین پر)۔',
+            'sv': '"asl" (above sea level) Total glaciärvolym som är över havsytan.<br>'
+                  '"bsl" (below sea level) Total glaciärvolym som är under havsytan.',
+            'ca': 'Abreviacions:<br>'
+                  '"asl" (above sea level): volum glacial total que es troba sobre el nivell del mar.<br>'
+                  '"bsl" (below sea level): volum glacial total que es troba sota el nivell del mar (no flotant).',
+    },
 
 }
